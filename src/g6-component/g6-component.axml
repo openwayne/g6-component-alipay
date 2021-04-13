@@ -10,7 +10,7 @@
     id="canvas"
     type="webgl"
     width="{{width * pixelRatio}}"
-    height="{{(height) * pixelRatio}}"
+    height="{{height * pixelRatio}}"
     style="width: {{width}}px; height: {{height}}px;"
     disable-scroll="{{true}}"
     onReady="onCanvasReady"

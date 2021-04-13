@@ -51,21 +51,21 @@ Component({
       };
 
       e.touches.forEach((touchEvent) => {
-        ev.touches.push(modifyEvent(touchEvent, target));
+        ev.touches.push(modifyEvent(touchEvent, target, this.rect));
       });
 
       e.changedTouches.forEach((touchEvent) => {
         // 真实的x的位置为client的位置 + rect的位置 +
-        ev.changedTouches.push(modifyEvent(touchEvent, target));
+        ev.changedTouches.push(modifyEvent(touchEvent, target, this.rect));
       });
       this.props.onTouchEvent(ev);
     },
   },
 });
 
-function modifyEvent(touchEvent, target) {
-  const x = touchEvent.pageX - target.offsetLeft;
-  const y = touchEvent.pageY - target.offsetTop;
+function modifyEvent(touchEvent, target, rect) {
+  const x = touchEvent.pageX - rect.left; // target.offsetLeft;
+  const y = touchEvent.pageY - rect.top; // target.offsetTop;
   return {
     x,
     y,

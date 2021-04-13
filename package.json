@@ -1,6 +1,6 @@
 {
   "name": "g6-component-alipay",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "支付宝小程序g6组件",
   "files": ["es"],
   "keywords": ["G6", "G6Mobile", "Wechat"],

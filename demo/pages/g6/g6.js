@@ -62,18 +62,11 @@ Page({
       pixelRatio,
     });
   },
-  onCanvasInit(ctx, rect, canvas) {
+  onCanvasInit(ctx, rect, canvas, renderer) {
     console.log(ctx, rect, canvas);
-    const { pixelRatio } = this.data;
-    ctx.scale(pixelRatio, pixelRatio);
     this.graph = new G6.Graph({
       context: ctx,
-      renderer: 'mini-native',
-      extraInfo: {
-        createImage: canvas.createImage,
-        requestAnimationFrame: canvas.requestAnimationFrame,
-        cancelAnimationFrame: canvas.cancelAnimationFrame,
-      },
+      renderer,
       width: this.data.width,
       height: this.data.height,
       fitView: true,
