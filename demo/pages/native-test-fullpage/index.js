@@ -53,6 +53,16 @@ Page({
       }),
     });
     this.graph.render();
+
+    this.graph.on('panstart', (e) => {
+      console.log('pan', e);
+    });
+    this.graph.on('panmove', (e) => {
+      console.log('pan move', e);
+    });
+    this.graph.on('panend', (e) => {
+      console.log('pan end', e);
+    });
   },
   onTouch(e) {
     this.graph.emitEvent(e);
