@@ -23,4 +23,4 @@ onInit 函数的回调
 
 # demo
 
-https://github.com/openwayne/g6-component-wx-demo
+https://github.com/openwayne/g6-component-alipay-demo
