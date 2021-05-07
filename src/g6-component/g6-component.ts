@@ -10,6 +10,7 @@ Component({
     pixelRatio: 1,
     onTouchEvent: () => {},
     onInit: () => {},
+    onError: () => {},
   },
   didMount() {
     if (!this.data.supportNative || this.props.forceMini) {
@@ -22,7 +23,19 @@ Component({
         .select('#canvas')
         .boundingClientRect()
         .exec((ret) => {
-          this.rect = ret[0];
+          if (ret && ret[0]) {
+            this.rect = ret[0];
+          } else {
+            this.rect = {
+              bottom: 0,
+              height: 0,
+              left: 0,
+              right: 0,
+              top: 0,
+              width: 0,
+            };
+            this.props.onError && this.props.onError(ret);
+          }
           if (this.data.supportNative && !this.props.forceMini) {
             console.log('native support');
             my._createCanvas({
