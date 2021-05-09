@@ -3,7 +3,8 @@
     "pages/native-canvas/index",
     "pages/g6/g6",
     "pages/native-test/native-test",
-    "pages/native-test-fullpage/index"
+    "pages/native-test-fullpage/index",
+    "pages/image/image"
   ],
   "window": {
     "enableWK": "YES",
